@@ -1,0 +1,43 @@
+local tex = {}
+math = function()
+	return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+tex.in_text = function()
+	return not m()
+end
+
+local mat = function(args, snip)
+	local rows = tonumber(snip.captures[2])
+	local columns = tonumber(snip.captures[3])
+	local nodes = {}
+end
+
+return {
+	s({ trig = "([bBpvV])mat(%d+) (%d+)", regTrig = true, name = "matrix", dscr = "dynamic matrix generation", hidden = true },
+		fmt([[
+		\begin{<>}
+		<>
+		\end{<>}]],
+		{f(function(_, snip)
+			return snip.captures[1] .. "matrix"
+		end),
+		d(1, mat),
+		f(function(_, snip)
+			return snip.captures[1] .. "matrix"
+		end),},
+		{ delimiters = "<>" }),
+		{condition = math, show_condition = math}),
+
+	s(
+		{
+			trig="hi",
+			dscr="test",
+			regTrig=false,
+			priority=300,
+			snippetType="autosnippet"
+		},
+		{
+			t("Hello, world!"),
+		}
+	),
+}
