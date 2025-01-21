@@ -1,0 +1,9 @@
+{
+    "themes": [
+        "Astolfo",
+        "catppuccin_mocha",
+        "gruvbox",
+        "rocket_thingy"
+    ],
+    "active": "rocket_thingy"
+}
