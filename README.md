@@ -18,3 +18,4 @@ Special thanks go out to the following people:
     - idk
     - lol
 - [~~Chatgpt~~](https://chatgpt.com/)
+- [Windows 11](https://www.microsoft.com/en-us/software-download/windows11), for being so horrible as to get me to switch to linux after using windows for my entire life.
